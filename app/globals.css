@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* 
-  From Josh Comeau
+  CSS Reset from From Josh Comeau
   https://courses.joshwcomeau.com/css-for-js/treasure-trove/010-global-styles
 /*
 
