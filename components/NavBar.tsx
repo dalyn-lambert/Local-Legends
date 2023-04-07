@@ -1,9 +1,11 @@
 import NavLink from './NavLink';
 
-const links: LinkProps[] = [
-  { label: 'EVENTS', link: '/events' },
-  { label: 'MATCHES', link: '/' },
-  { label: 'CHANNELS', link: '/channels' },
+export type LinkData = { label: string; route: string };
+
+const links: LinkData[] = [
+  { label: 'EVENTS', route: '/events' },
+  { label: 'MATCHES', route: '/' },
+  { label: 'CHANNELS', route: '/channels' },
 ];
 
 const NavBar = () => {

@@ -1,18 +1,22 @@
 'use client';
 
+import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { LinkData } from './NavBar';
 
-const NavLink = (link: LinkProps) => {
+type NavLinkProps = { link: LinkData };
+
+const NavLink = ({ link }: NavLinkProps) => {
   const pathname = usePathname();
   let isActive = false;
 
-  if (pathname == link.link) {
+  if (pathname == link.route) {
     isActive = true;
   }
 
   return (
-    <Link href={link.link} className='text-black text-2xl hover:text-red'>
+    <Link href={link.route} className={clsx('text-black text-2xl hover:text-red', isActive && 'text-red')}>
       {link.label}
     </Link>
   );
