@@ -13,7 +13,7 @@ datasource db {
 model Match {
   id                 Int      @id @default(autoincrement())
   createdAt          DateTime @default(now())
-  player1            String
+  player1          String
   playerOneCharacter String[]
   playerTwo          String
   playerTwoCharacter String[]
@@ -21,10 +21,10 @@ model Match {
   bracketBlock       String
   videoUrl           String
 
-  Event     Event?   @relation(fields: [eventId], references: [id])
-  eventId   Int?
-  Channel   Channel? @relation(fields: [channelId], references: [id])
-  channelId Int?
+  Event     Event   @relation(fields: [eventId], references: [id])
+  eventId   Int
+  Channel   Channel @relation(fields: [channelId], references: [id])
+  channelId Int
 }
 
 model Event {
