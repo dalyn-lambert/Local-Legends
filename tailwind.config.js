@@ -14,6 +14,9 @@ module.exports = {
       black: '#202020',
       white: 'FFFFFF',
     },
+    fontFamily: {
+      sans: ['Mukta', 'sans-serif'],
+    },
     extend: {},
   },
   plugins: [],

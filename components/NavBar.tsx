@@ -10,7 +10,7 @@ const links: LinkData[] = [
 
 const NavBar = () => {
   return (
-    <div className='bg-lt-gray flex justify-between drop-shadow-md hover:drop-shadow-lg rounded-full items-center w-2/3 h-16 mt-4 px-14'>
+    <div className='bg-lt-gray flex justify-between drop-shadow-md hover:drop-shadow-xl rounded-full items-center w-2/3 h-16 my-4 px-14'>
       {links.map((link) => (
         <NavLink key={link.label} link={link} />
       ))}

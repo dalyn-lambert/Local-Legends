@@ -16,7 +16,10 @@ const NavLink = ({ link }: NavLinkProps) => {
   }
 
   return (
-    <Link href={link.route} className={clsx('text-black text-2xl hover:text-red', isActive && 'text-red')}>
+    <Link
+      href={link.route}
+      className={clsx('text-black text-2xl tracking-widest hover:text-red', isActive && 'text-red font-bold')}
+    >
       {link.label}
     </Link>
   );
