@@ -17,22 +17,22 @@ const getEventForMatch = async (eventId: number) => {
 
 const MatchTitle = async ({ match }: MatchTitleProps) => {
   const size = 24;
-  const { player1, playerOneCharacter, playerTwo, playerTwoCharacter, eventId, bracketBlock } = match;
+  const { player1, playerOneCharacter, playerTwo, playerTwoCharacter, eventId, bracketBlock, videoUrl } = match;
   const eventName = await getEventForMatch(eventId);
 
   return (
-    <div className='grid grid-cols-4 gap-8 p-2 text-lt-gray text-sm'>
+    <a href={videoUrl} target='_blank' className='grid grid-cols-4 gap-8 p-2 text-white text-sm'>
       <div className='flex flex-row gap-3 col-span-2'>
         {player1}
         <Image
-          src={`/assets/icons/${playerOneCharacter}HeadSSBM.png`}
+          src={`/assets/icons/${playerOneCharacter}.png`}
           alt={`${playerOneCharacter}`}
           width={size}
           height={size}
         />{' '}
         <span>vs</span> {playerTwo}
         <Image
-          src={`/assets/icons/${playerTwoCharacter}HeadSSBM.png`}
+          src={`/assets/icons/${playerTwoCharacter}.png`}
           alt={`${playerTwoCharacter}`}
           width={size}
           height={size}
@@ -40,7 +40,7 @@ const MatchTitle = async ({ match }: MatchTitleProps) => {
       </div>
       <div className='col-start-3'>{eventName && <span>{eventName}</span>}</div>
       <div>{bracketBlock}</div>
-    </div>
+    </a>
   );
 };
 

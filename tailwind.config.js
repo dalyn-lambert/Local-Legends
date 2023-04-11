@@ -12,7 +12,7 @@ module.exports = {
       'dk-yellow': '#95741E',
       'dk-blue': '#14203C',
       black: '#202020',
-      white: 'FFFFFF',
+      white: '#FFFFFF',
     },
     fontFamily: {
       sans: ['Mukta', 'sans-serif'],
