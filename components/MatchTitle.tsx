@@ -21,7 +21,11 @@ const MatchTitle = async ({ match }: MatchTitleProps) => {
   const eventName = await getEventForMatch(eventId);
 
   return (
-    <a href={videoUrl} target='_blank' className='grid grid-cols-4 gap-8 p-2 text-white text-sm'>
+    <a
+      href={videoUrl}
+      target='_blank'
+      className='border-b-2 border-b-dk-gray grid grid-cols-4 gap-8 p-2 text-white text-sm'
+    >
       <div className='flex flex-row gap-3 col-span-2'>
         {player1}
         <Image

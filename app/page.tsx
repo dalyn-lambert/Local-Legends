@@ -1,9 +1,6 @@
 import CharacterCard from '@/components/CharacterCard';
 import MatchTitle from '@/components/MatchTitle';
 import { db } from '@/lib/db';
-import { Match } from '@prisma/client';
-
-export type MatchData = Match;
 
 const getMatches = async () => {
   const matches = await db.match.findMany({});
