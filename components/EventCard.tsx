@@ -3,7 +3,7 @@ import { Event } from '@prisma/client';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
-type CardProps = { event: Event };
+type EventCardProps = { event: Event };
 
 const getChannelForEvent = async (channelId: number) => {
   const channel = await db.channel.findUnique({
@@ -14,7 +14,7 @@ const getChannelForEvent = async (channelId: number) => {
   }
 };
 
-const Card = async ({ event }: CardProps) => {
+const EventCard = async ({ event }: EventCardProps) => {
   const { name, eventDate, channelId } = event;
   const formattedDate = format(new Date(eventDate), 'MM/dd/yyyy');
 
@@ -35,4 +35,4 @@ const Card = async ({ event }: CardProps) => {
   );
 };
 
-export default Card;
+export default EventCard;
