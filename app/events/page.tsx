@@ -1,5 +1,6 @@
 import EventCard from '@/components/EventCard';
 import { db } from '@/lib/db';
+import Link from 'next/link';
 
 const getEvents = async () => {
   const events = await db.event.findMany({});
@@ -11,9 +12,11 @@ export default async function Events() {
   return (
     <div className='flex flex-row flex-wrap w-3/4 gap-4 justify-between px-7'>
       {events.map((event) => (
-        /* https://github.com/vercel/next.js/issues/42292#issuecomment-1298459024 */
-        /* @ts-expect-error Server Component */
-        <EventCard key={event.id} event={event} />
+        <Link key={event.id} href={`/events/${event.name}`}>
+          {/* https://github.com/vercel/next.js/issues/42292#issuecomment-1298459024 */}
+          {/* @ts-expect-error Server Component */}
+          <EventCard event={event} />
+        </Link>
       ))}
     </div>
   );
