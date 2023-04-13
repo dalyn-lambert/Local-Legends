@@ -1,5 +1,5 @@
 import EventCard from '@/components/EventCard';
-import { db, getAllEvents } from '@/lib/db';
+import { getAllEvents } from '@/lib/db';
 import Link from 'next/link';
 
 export default async function Events() {

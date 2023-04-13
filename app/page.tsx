@@ -18,7 +18,7 @@ export default async function Matches() {
             key={match.id}
             href={match.videoUrl}
             target='_blank'
-            className='hover:bg-dk-purple border-b-2 border-b-dk-gray grid grid-cols-4 gap-8 p-2 text-white text-sm'
+            className='hover:bg-dk-purple border-b-2 border-b-dk-purple grid grid-cols-4 gap-8 p-2 text-white text-sm'
           >
             <MatchTitle
               player1={match.player1}

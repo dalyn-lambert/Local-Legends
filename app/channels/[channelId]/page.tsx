@@ -17,7 +17,7 @@ export default async function Channel({ params }: { params: { channelId: number 
           <Link
             key={event.id}
             href={`/events/${event.id}`}
-            className='hover:bg-dk-purple border-b-2 border-b-dk-gray flex flex-row gap-8 p-2 text-white text-sm justify-between'
+            className='hover:bg-dk-purple border-b-2 border-b-dk-purple flex flex-row gap-8 p-2 text-white text-sm justify-between'
           >
             <div>{event.name}</div>
             <div>{format(new Date(event?.eventDate), 'MM/dd/yyyy')}</div>

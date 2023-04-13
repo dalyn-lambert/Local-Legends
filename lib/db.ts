@@ -67,3 +67,7 @@ export const getEventsForChannel = async (channelId: number) => {
   const events = await db.event.findMany({ orderBy: { createdAt: 'desc' }, where: { channelId: channelId } });
   return { events };
 };
+
+export const countEventsForChannel = async (channelId: number) => {
+  return await prisma.event.count({ where: { channelId: channelId } });
+};
