@@ -3,7 +3,7 @@ import Card from './Card';
 
 type ChannelCardProps = { channel: Channel };
 
-const EventCard = async ({ channel }: ChannelCardProps) => {
+const ChannelCard = async ({ channel }: ChannelCardProps) => {
   const { name, thumbnail, region, twitchURL, youtubeURL, twitterURL } = channel;
 
   return (
@@ -13,4 +13,4 @@ const EventCard = async ({ channel }: ChannelCardProps) => {
   );
 };
 
-export default EventCard;
+export default ChannelCard;

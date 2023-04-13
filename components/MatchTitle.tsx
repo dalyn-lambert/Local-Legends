@@ -1,24 +1,13 @@
-import { db } from '@/lib/db';
+import { getEventById } from '@/lib/db';
 import { Match } from '@prisma/client';
 import Image from 'next/image';
 
 type MatchTitleProps = { match: Match };
 
-const getEventForMatch = async (eventId: number) => {
-  const event = await db.event.findUnique({
-    where: {
-      id: eventId,
-    },
-  });
-  if (event) {
-    return event.name;
-  }
-};
-
 const MatchTitle = async ({ match }: MatchTitleProps) => {
   const size = 24;
   const { player1, playerOneCharacter, playerTwo, playerTwoCharacter, eventId, bracketBlock, videoUrl } = match;
-  const eventName = await getEventForMatch(eventId);
+  const event = await getEventById(eventId);
 
   return (
     <a
@@ -42,7 +31,7 @@ const MatchTitle = async ({ match }: MatchTitleProps) => {
           height={size}
         />
       </div>
-      <div className='col-start-3'>{eventName && <span>{eventName}</span>}</div>
+      <div className='col-start-3'>{event && <span>{event.name}</span>}</div>
       <div>{bracketBlock}</div>
     </a>
   );
