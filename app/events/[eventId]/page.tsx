@@ -17,7 +17,7 @@ export default async function Event({ params }: { params: { eventId: number } })
             key={match.id}
             href={match.videoUrl}
             target='_blank'
-            className='border-b-2 border-b-dk-gray flex flex-row gap-8 p-2 text-white text-sm justify-between'
+            className='hover:bg-dk-purple border-b-2 border-b-dk-gray flex flex-row gap-8 p-2 text-white text-sm justify-between'
           >
             <MatchTitle
               player1={match.player1}
