@@ -13,9 +13,20 @@ export default async function Event({ params }: { params: { eventId: number } })
       <EventCard event={event} />
       <div className='grow'>
         {matches.map((match) => (
-          /* https://github.com/vercel/next.js/issues/42292#issuecomment-1298459024 */
-          /* @ts-expect-error Server Component */
-          <MatchTitle key={match.id} match={match} />
+          <a
+            key={match.id}
+            href={match.videoUrl}
+            target='_blank'
+            className='border-b-2 border-b-dk-gray flex flex-row gap-8 p-2 text-white text-sm justify-between'
+          >
+            <MatchTitle
+              player1={match.player1}
+              playerOneCharacter={match.playerOneCharacter}
+              playerTwo={match.playerTwo}
+              playerTwoCharacter={match.playerTwoCharacter}
+            />
+            <div>{match.bracketBlock}</div>
+          </a>
         ))}
       </div>
     </div>

@@ -7,8 +7,6 @@ type EventCardProps = { event: Event };
 
 const EventCard = async ({ event }: EventCardProps) => {
   const { name, eventDate, channelId } = event;
-  console.log({ name });
-  console.log({ eventDate });
   const formattedDate = format(new Date(eventDate), 'MM/dd/yyyy');
 
   const channel = await getChannelById(channelId);
