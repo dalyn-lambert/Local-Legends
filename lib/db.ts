@@ -40,6 +40,11 @@ export const getAllMatches = async () => {
   return { matches };
 };
 
+export const getMatchesForEvent = async (eventId: number) => {
+  const matches = await db.match.findMany({ where: { eventId: eventId } });
+  return { matches };
+};
+
 // Event Database Calls
 
 export const getAllEvents = async () => {
@@ -56,4 +61,9 @@ export const getEventById = async (eventId: number) => {
   if (event) {
     return event;
   }
+};
+
+export const getEventsForChannel = async (channelId: number) => {
+  const events = await db.event.findMany({ where: { channelId: channelId } });
+  return { events };
 };
