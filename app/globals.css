@@ -83,3 +83,28 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d6d6d6 #5a5096;
+}
+
+/* Chrome, Edge, and Safari */
+::-webkit-scrollbar-corner {
+  background: #5a5096;
+}
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #5a5096;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d6d6d6;
+  border-radius: 14px;
+  border: 3px solid #5a5096;
+}

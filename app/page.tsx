@@ -8,7 +8,7 @@ export default async function Matches() {
 
   return (
     <div className='flex flex-cols-2 w-3/4 gap-8 justify-between px-7'>
-      <div>
+      <div className='flex flex-col gap-12'>
         <CharacterCard flag='Player 1' />
         <CharacterCard flag='Player 2' />
       </div>

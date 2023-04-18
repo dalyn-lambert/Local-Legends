@@ -35,7 +35,7 @@ const CharacterCard = ({ flag }: CharacterCardProps) => {
     'Young Link',
     'Zelda',
   ];
-  const [selectedCharacter, setSelectedCharacter] = useState(characters[0]);
+  const [selectedCharacter, setSelectedCharacter] = useState('Fox');
   const [query, setQuery] = useState('');
 
   const filteredCharacter =
@@ -58,26 +58,25 @@ const CharacterCard = ({ flag }: CharacterCardProps) => {
       ${selectedCharacter}`}
         className='pt-8 translate-x-[34px]'
       />
-      <div className='flex flex-col items-center'>
-        <div className='bg-dk-blue w-[150px] h-[75px] border-2 border-md-gray rounded-sm text-white text-center flex flex-col justify-end pb-1'>
-          {selectedCharacter}
-        </div>
+
+      <div className='z-10 bg-dk-blue w-[150px] h-[75px] border-2 border-md-gray rounded-sm pb-1'>
         <Combobox value={selectedCharacter} onChange={setSelectedCharacter}>
-          <div className='overflow-hidden'>
+          <div className='bg-black w-[125px] h-[50px] border-2 border-md-gray rounded-sm text-white text-sm items-center flex flex-col justify-center -translate-y-[20px] translate-x-[10px]'>
             <Combobox.Input
               onChange={(event) => setQuery(event.target.value)}
-              className='overflow-hidden bg-black w-[125px] h-[50px] border-2 border-md-gray rounded-sm text-white text-center flex flex-col justify-center -translate-y-[90px]'
+              className='bg-black text-center w-[121px]'
             />
-
-            <Combobox.Button className='absolute flex translate-x-[40px]'>
+            <Combobox.Button className=''>
               <ChevronDown className='h-5 w-5 text-white' aria-hidden='true' />
             </Combobox.Button>
-            <Combobox.Options>
+          </div>
+          <div className='z-20 bg-dk-blue'>
+            <Combobox.Options className='h-[90px] pt-1 overflow-y-scroll scrollbar-none -translate-y-[15px] translate-x-[10px]'>
               {filteredCharacter.map((character) => (
                 <Combobox.Option
                   key={character}
                   value={character}
-                  className=' bg-black w-[125px] h-[40px] border-y-[0.5px] border-x-2 border-md-gray rounded-sm text-white text-center flex flex-col justify-center -translate-y-[90px]'
+                  className='cursor-pointer bg-dk-blue w-[125px] h-[30px] border-y-[0.5px] border-md-gray rounded-sm text-sm text-white text-center flex flex-col justify-center -translate-y-[100px] '
                 >
                   {character}
                 </Combobox.Option>
