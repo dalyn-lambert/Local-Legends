@@ -9,8 +9,8 @@ export default async function Matches() {
   return (
     <div className='flex flex-cols-2 w-3/4 gap-8 justify-between px-7'>
       <div>
-        <CharacterCard flag='Player 1' character='Bowser' />
-        <CharacterCard flag='Player 2' character='Captain Falcon' />
+        <CharacterCard flag='Player 1' />
+        <CharacterCard flag='Player 2' />
       </div>
       <div className='grow'>
         {matches.map((match) => (
