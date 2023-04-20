@@ -21,7 +21,7 @@ export default async function Matches() {
             className='hover:bg-dk-purple border-b-2 border-b-dk-purple grid grid-cols-4 gap-8 p-2 text-white text-sm'
           >
             <MatchTitle
-              player1={match.player1}
+              player1={match.playerOne}
               playerOneCharacter={match.playerOneCharacter}
               playerTwo={match.playerTwo}
               playerTwoCharacter={match.playerTwoCharacter}

@@ -20,7 +20,7 @@ export default async function Event({ params }: { params: { eventId: number } })
             className='hover:bg-dk-purple border-b-2 border-b-dk-purple flex flex-row gap-8 p-2 text-white text-sm justify-between'
           >
             <MatchTitle
-              player1={match.player1}
+              player1={match.playerOne}
               playerOneCharacter={match.playerOneCharacter}
               playerTwo={match.playerTwo}
               playerTwoCharacter={match.playerTwoCharacter}

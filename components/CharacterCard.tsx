@@ -24,7 +24,7 @@ const CharacterCard = ({ flag }: CharacterCardProps) => {
     'Mario',
     'Marth',
     'Mewtwo',
-    'Mr. Game & Watch',
+    'Mr. G & W',
     'Ness',
     'Peach',
     'Pichu',
@@ -61,12 +61,12 @@ const CharacterCard = ({ flag }: CharacterCardProps) => {
 
       <div className='z-10 bg-dk-blue w-[150px] h-[75px] border-2 border-md-gray rounded-sm pb-1'>
         <Combobox value={selectedCharacter} onChange={setSelectedCharacter}>
-          <div className='bg-black w-[125px] h-[50px] border-2 border-md-gray rounded-sm text-white text-sm items-center flex flex-col justify-center -translate-y-[20px] translate-x-[10px]'>
+          <div className=' bg-black w-[125px] h-[50px] border-2 border-md-gray rounded-sm text-white text-sm items-center flex flex-row justify-center -translate-y-[20px] translate-x-[10px]'>
             <Combobox.Input
               onChange={(event) => setQuery(event.target.value)}
-              className='bg-black text-center w-[121px]'
+              className='bg-black text-center w-[100px] focus:border-red'
             />
-            <Combobox.Button className=''>
+            <Combobox.Button className='pr-1'>
               <ChevronDown className='h-5 w-5 text-white' aria-hidden='true' />
             </Combobox.Button>
           </div>
